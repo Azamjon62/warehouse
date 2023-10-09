@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   config,
   creditcard,
@@ -7,8 +7,9 @@ import {
   logo,
   tables,
 } from "../../assets/images";
+import { NavLink } from "react-router-dom";
 
-const Siderbar = () => {
+const Sidebar = () => {
   const btnRef = useRef(null);
   useEffect(() => {
     const isActive = () => {
@@ -23,6 +24,9 @@ const Siderbar = () => {
       };
     };
   });
+
+  const [,] = useState(true);
+
   const activeLink =
     "flex items-center px-4 py-3 bg-sidebarActive rounded-[15px] cursor-pointer";
   const normalLink =
@@ -50,16 +54,44 @@ const Siderbar = () => {
                   </div>
                   <p className="text-sm font-jakartaSans">Dashboard</p>
                 </li>
-                <li className="flex items-center px-4 py-3 rounded-[15px]">
-                  <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
-                    <img
-                      src={tables}
-                      alt="icon"
-                      className="w-[15px] h-[15px]"
-                    />
+
+                <li>
+                  <div className="flex items-center px-4 py-3 rounded-[15px]">
+                    <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
+                      <img
+                        src={tables}
+                        alt="icon"
+                        className="w-[15px] h-[15px]"
+                      />
+                    </div>
+                    <div className="flex gap-16 items-center">
+                      <div className="text-sm font-jakartaSans">
+                        <span>Product</span>
+                      </div>
+                      <ion-icon name="chevron-up-outline"></ion-icon>
+                    </div>
                   </div>
-                  <p className="text-sm font-jakartaSans">Tables</p>
+
+                  <div className="dropdown">
+                    <NavLink to={'/products'}>
+                      <ul className="">
+                        <li className="flex items-center gap-3 px-11 py-3 rounded-[15px] active:bg-iconBg-active mr-3">
+                          <ion-icon name="bag-outline"></ion-icon>
+                            <p className="text-sm font-jakartaSans">Products</p> 
+                        </li>
+                      </ul>
+                    </NavLink>
+                    <NavLink to={'/add-products'}>
+                      <ul className="">
+                        <li className="flex items-center gap-3 px-11 py-3 rounded-[15px] active:bg-iconBg-active mr-3">
+                          <ion-icon name="bag-outline"></ion-icon>
+                            <p className="text-sm font-jakartaSans">Add Product</p> 
+                        </li>
+                      </ul>
+                    </NavLink>
+                  </div>
                 </li>
+
                 <li className="flex items-center px-4 py-3 rounded-[15px]">
                   <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
                     <img
@@ -89,4 +121,4 @@ const Siderbar = () => {
   );
 };
 
-export default Siderbar;
+export default Sidebar;
