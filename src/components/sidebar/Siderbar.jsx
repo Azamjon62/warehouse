@@ -68,7 +68,7 @@ const Siderbar = () => {
                       className="w-[15px] h-[15px]"
                     />
                   </div>
-                  <p className="text-sm font-jakartaSans">Billing</p>
+                  <p className="text-sm font-jakartaSans">Transaction</p>
                 </li>
                 <li className="flex items-center px-4 py-3 rounded-[15px]">
                   <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
