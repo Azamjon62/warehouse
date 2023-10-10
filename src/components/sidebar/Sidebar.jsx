@@ -24,8 +24,9 @@ const Sidebar = () => {
       };
     };
   });
-
   const [,] = useState(true);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const activeLink =
     "flex items-center px-4 py-3 bg-sidebarActive rounded-[15px] cursor-pointer";
@@ -48,15 +49,15 @@ const Sidebar = () => {
             </div>
             <div className="wrapper-bottom px-5">
               <ul className="nav flex flex-col text-white gap-y-1 pb-3">
-                <li ref={btnRef} className={normalLink}>
-                  <div className="p-2 rounded-xl bg-iconBg-active active:bg-iconBg-active mr-3">
+                <li ref={btnRef} className={normalLink + "bg-iconBg-active active:bg-iconBg-active"}>
+                  <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
                     <img src={home} alt="icon" className="w-[15px] h-[15px]" />
                   </div>
                   <p className="text-sm font-jakartaSans">Dashboard</p>
                 </li>
 
                 <li>
-                  <div className="flex items-center px-4 py-3 rounded-[15px]">
+                  <div className="flex items-center px-4 py-3 rounded-[15px] cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
                     <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
                       <img
                         src={tables}
@@ -68,28 +69,37 @@ const Sidebar = () => {
                       <div className="text-sm font-jakartaSans">
                         <span>Product</span>
                       </div>
-                      <ion-icon name="chevron-up-outline"></ion-icon>
+                      {isOpen && (
+                        <ion-icon name="chevron-up-outline"></ion-icon>
+                      )}
+                      {!isOpen && (
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                      )}
+                      
                     </div>
                   </div>
 
-                  <div className="dropdown">
-                    <NavLink to={'/products'}>
-                      <ul className="">
-                        <li className="flex items-center gap-3 px-11 py-3 rounded-[15px] active:bg-iconBg-active mr-3">
-                          <ion-icon name="bag-outline"></ion-icon>
-                            <p className="text-sm font-jakartaSans">Products</p> 
-                        </li>
-                      </ul>
-                    </NavLink>
-                    <NavLink to={'/add-products'}>
-                      <ul className="">
-                        <li className="flex items-center gap-3 px-11 py-3 rounded-[15px] active:bg-iconBg-active mr-3">
-                          <ion-icon name="bag-outline"></ion-icon>
-                            <p className="text-sm font-jakartaSans">Add Product</p> 
-                        </li>
-                      </ul>
-                    </NavLink>
-                  </div>
+                  {isOpen && (
+                      <div className="dropdown">
+                      <NavLink to={'/products'}>
+                        <ul className="">
+                          <li className="flex items-center gap-3 px-11 py-3 rounded-[15px] active:bg-iconBg-active mr-3">
+                            <ion-icon name="bag-outline"></ion-icon>
+                              <p className="text-sm font-jakartaSans">Products</p> 
+                          </li>
+                        </ul>
+                      </NavLink>
+                      <NavLink to={'/add-products'}>
+                        <ul className="">
+                          <li className="flex items-center gap-3 px-11 py-3 rounded-[15px] active:bg-iconBg-active mr-3">
+                            <ion-icon name="bag-outline"></ion-icon>
+                              <p className="text-sm font-jakartaSans">Add Product</p> 
+                          </li>
+                        </ul>
+                      </NavLink>
+                    </div>
+                    )}
+
                 </li>
 
                 <li className="flex items-center px-4 py-3 rounded-[15px]">

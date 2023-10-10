@@ -7,7 +7,7 @@ function App() {
     <>
     <div className="flex h-[100%]" >
       <Sidebar />
-      <main>
+      <main className="container max-w-6xl" >
         <Routes>
           <Route path="/products" element={<Product/>} />
           <Route path="/add-products" element={<Product/>} />
