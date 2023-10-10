@@ -1,4 +1,4 @@
-import { home, tables, creditcard, config, cart } from "../assets/images";
+import { home, tables, creditcard, config } from "../assets/images";
 export const links = [
   {
     title: "Dashboard",

@@ -7,7 +7,7 @@ import {
   logo,
   tables,
 } from "../../assets/images";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { links } from "../../utils/dummy";
 import Button from "./Button";
 
@@ -25,7 +25,7 @@ const Sidebar = () => {
         document.removeEventListener("focus", isActive);
       };
     };
-  });
+  }, []);
 
   const [,] = useState(true);
 
@@ -35,13 +35,16 @@ const Sidebar = () => {
         <div className="w-[264px] max-h-[890] h-full rounded-[20px] bg-[#001e53] ">
           <div className="wrapper">
             <div className="wrapper-top flex flex-col pt-7 mb-5">
-              <a href="#" className="self-center w-[135px] h-[14px] mb-7">
+              <Link
+                to={"/dashboard"}
+                className="self-center w-[135px] h-[14px] mb-7"
+              >
                 <img
                   src={logo}
                   alt="logo of warehouse"
                   className=" w-[135px] h-[14px]"
                 />
-              </a>
+              </Link>
               <img src={lineafterlogo} alt="line" />
             </div>
             <div className="wrapper-bottom px-5">
