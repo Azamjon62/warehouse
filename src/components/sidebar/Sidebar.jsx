@@ -7,7 +7,9 @@ import {
   logo,
   tables,
 } from "../../assets/images";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { links } from "../../utils/dummy";
+import Button from "./Button";
 
 const Sidebar = () => {
   const btnRef = useRef(null);
@@ -23,8 +25,9 @@ const Sidebar = () => {
         document.removeEventListener("focus", isActive);
       };
     };
+
   });
-  const [,] = useState(true);
+
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,19 +35,27 @@ const Sidebar = () => {
     "flex items-center px-4 py-3 bg-sidebarActive rounded-[15px] cursor-pointer";
   const normalLink =
     "flex items-center px-4 py-3 rounded-[15px] cursor-pointer";
+
+  }, []);
+
+  const [,] = useState(true);
+
   return (
     <>
       <div className="px-5 h-full py-5">
         <div className="w-[264px] max-h-[890] h-full rounded-[20px] bg-[#001e53a4] ">
           <div className="wrapper">
             <div className="wrapper-top flex flex-col pt-7 mb-5">
-              <a href="#" className="self-center w-[135px] h-[14px] mb-7">
+              <Link
+                to={"/dashboard"}
+                className="self-center w-[135px] h-[14px] mb-7"
+              >
                 <img
                   src={logo}
                   alt="logo of warehouse"
                   className=" w-[135px] h-[14px]"
                 />
-              </a>
+              </Link>
               <img src={lineafterlogo} alt="line" />
             </div>
             <div className="wrapper-bottom px-5">
@@ -118,10 +129,18 @@ const Sidebar = () => {
                       src={config}
                       alt="icon"
                       className="w-[15px] h-[15px]"
+
+                {links.map((link) => {
+                  return (
+                    <Button
+                      title={link.title}
+                      icon={link.icon}
+                      dropdown={link.dropdown}
+                      key={link.title}
+
                     />
-                  </div>
-                  <p className="text-sm font-jakartaSans">RTL</p>
-                </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
