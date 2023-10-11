@@ -12,9 +12,11 @@ function App() {
   return (
     <>
       <div className="flex h-[100%]">
-        <Layout />
+        {/* <Layout /> */}
+
         <main>
           <Routes>
+            <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/billing" element={<Billing />} />
             <Route path="/rtl" element={<RTL />} />
