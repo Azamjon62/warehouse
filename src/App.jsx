@@ -1,6 +1,7 @@
 import Sidebar from "./components/sidebar/Sidebar";
 import { Route, Routes } from "react-router-dom";
 import Product from "./pages/product/Product";
+import AddProduct from "./pages/product/AddProduct";
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
       <Sidebar />
       <main className="container max-w-6xl" >
         <Routes>
-          <Route path="/products" element={<Product/>} />
-          <Route path="/add-products" element={<Product/>} />
+          <Route path="/products" element={<Product />} />
+          <Route path="/add-products" element={<AddProduct />} />
         </Routes>
       </main>
     </div>
