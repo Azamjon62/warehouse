@@ -12,13 +12,24 @@
     format("woff2");
 }
 
+/* plus-jakarta-sans-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/plus-jakarta-sans-v8-latin-700.woff2")
+    format("woff2");
+}
+
 body {
   width: 100%;
   height: 100vh;
+  font-family: "Plus Jakarta Sans";
   /* display: flex; */
   /* flex-direction: column; */
-  background-color: #01225c;
-  background-image: url("./assets/images/pageBgImg.png");
+  /* background-color: #01225c; */
+  /* background-image: url("./assets/images/pageBgImg.png"); */
   background-position: bottom;
   background-size: auto;
   background-repeat: no-repeat;
