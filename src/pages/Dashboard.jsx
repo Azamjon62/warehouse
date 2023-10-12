@@ -1,10 +1,12 @@
 import React from "react";
-import { Layout } from "../components";
+import { Layout, Dashboardcom } from "../components";
 
 const Dashboard = () => {
   return (
     <>
-      <Layout></Layout>
+      <Layout>
+        <Dashboardcom />
+      </Layout>
     </>
   );
 };
