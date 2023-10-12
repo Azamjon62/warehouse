@@ -18,12 +18,19 @@ const Sidebar = () => {
         document.removeEventListener("focus", isActive);
       };
     };
-  }, []);
+  });
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const activeLink =
+    "flex items-center px-4 py-3 bg-sidebarActive rounded-[15px] cursor-pointer";
+  const normalLink =
+    "flex items-center px-4 py-3 rounded-[15px] cursor-pointer";
 
   return (
     <>
       <div className="px-5 h-full py-5">
-        <div className="w-[264px] max-h-[890] h-full rounded-[20px] bg-[#001e53] ">
+        <div className="w-[264px] max-h-[890] h-full rounded-[20px] bg-[#001e53a4] ">
           <div className="wrapper">
             <div className="wrapper-top flex flex-col pt-7 mb-5">
               <Link

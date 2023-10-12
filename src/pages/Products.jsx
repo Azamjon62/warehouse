@@ -1,10 +1,12 @@
 import React from "react";
-import { Layout } from "../components";
+import { Layout, Product } from "../components";
 
 const Products = () => {
   return (
     <>
-      <Layout></Layout>
+      <Layout isDropdownActive={false}>
+        <Product />
+      </Layout>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Billing, Dashboard, Login, Products, RTL } from "./pages";
+import { Billing, Dashboard, Login, Products, AddProducts, RTL } from "./pages";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
             <Route path="/billing" element={<Billing />} />
             <Route path="/rtl" element={<RTL />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/addproducts" element={<AddProducts />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<h1>Error 404 not found</h1>} />
           </Routes>
