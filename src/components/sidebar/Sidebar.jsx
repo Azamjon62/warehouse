@@ -1,13 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  config,
-  creditcard,
-  home,
-  lineafterlogo,
-  logo,
-  tables,
-} from "../../assets/images";
-import { Link, NavLink } from "react-router-dom";
+import { lineafterlogo, logo } from "../../assets/images";
+import { Link } from "react-router-dom";
 import { links } from "../../utils/dummy";
 import Button from "./Button";
 
@@ -26,8 +19,6 @@ const Sidebar = () => {
       };
     };
   }, []);
-
-  const [,] = useState(true);
 
   return (
     <>

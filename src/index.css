@@ -26,10 +26,10 @@ body {
   width: 100%;
   height: 100vh;
   font-family: "Plus Jakarta Sans";
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* background-color: #01225c; */
-  /* background-image: url("./assets/images/pageBgImg.png"); */
+  display: flex;
+  flex-direction: column;
+  background-color: #01225c;
+  background-image: url("./assets/images/pageBgImg.png");
   background-position: bottom;
   background-size: auto;
   background-repeat: no-repeat;
