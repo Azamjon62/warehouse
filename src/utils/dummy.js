@@ -5,7 +5,7 @@ export const links = [
     icon: home,
   },
   {
-    title: "Product",
+    title: "Products",
     icon: tables,
     dropdown: [
       {

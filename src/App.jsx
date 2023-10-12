@@ -13,6 +13,7 @@ function App() {
             <Route path="/rtl" element={<RTL />} />
             <Route path="/products" element={<Products />} />
             <Route path="/login" element={<Login />} />
+            <Route path="*" element={<h1>Error 404 not found</h1>} />
           </Routes>
         </main>
       </div>

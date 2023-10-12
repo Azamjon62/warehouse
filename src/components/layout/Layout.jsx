@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "../sidebar/Sidebar";
 
-const Layout = ({ children }) => {
-  const [isSideBarActive, setIsSideBarActive] = useState(true);
+const Layout = ({ isSideBarActive = true, children }) => {
   return isSideBarActive ? (
     <>
       <Sidebar />
