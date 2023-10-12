@@ -1,13 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  config,
-  creditcard,
-  home,
-  lineafterlogo,
-  logo,
-  tables,
-} from "../../assets/images";
-import { Link, NavLink } from "react-router-dom";
+import { lineafterlogo, logo } from "../../assets/images";
+import { Link } from "react-router-dom";
 import { links } from "../../utils/dummy";
 import Button from "./Button";
 
@@ -25,9 +18,7 @@ const Sidebar = () => {
         document.removeEventListener("focus", isActive);
       };
     };
-
   });
-
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,10 +26,6 @@ const Sidebar = () => {
     "flex items-center px-4 py-3 bg-sidebarActive rounded-[15px] cursor-pointer";
   const normalLink =
     "flex items-center px-4 py-3 rounded-[15px] cursor-pointer";
-
-  }, []);
-
-  const [,] = useState(true);
 
   return (
     <>
@@ -60,76 +47,6 @@ const Sidebar = () => {
             </div>
             <div className="wrapper-bottom px-5">
               <ul className="nav flex flex-col text-white gap-y-1 pb-3">
-                <li ref={btnRef} className={normalLink + "bg-iconBg-active active:bg-iconBg-active"}>
-                  <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
-                    <img src={home} alt="icon" className="w-[15px] h-[15px]" />
-                  </div>
-                  <p className="text-sm font-jakartaSans">Dashboard</p>
-                </li>
-
-                <li>
-                  <div className="flex items-center px-4 py-3 rounded-[15px] cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-                    <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
-                      <img
-                        src={tables}
-                        alt="icon"
-                        className="w-[15px] h-[15px]"
-                      />
-                    </div>
-                    <div className="flex gap-16 items-center">
-                      <div className="text-sm font-jakartaSans">
-                        <span>Product</span>
-                      </div>
-                      {isOpen && (
-                        <ion-icon name="chevron-up-outline"></ion-icon>
-                      )}
-                      {!isOpen && (
-                        <ion-icon name="chevron-down-outline"></ion-icon>
-                      )}
-                      
-                    </div>
-                  </div>
-
-                  {isOpen && (
-                      <div className="dropdown">
-                      <NavLink to={'/products'}>
-                        <ul className="">
-                          <li className="flex items-center gap-3 px-11 py-3 rounded-[15px] active:bg-iconBg-active mr-3">
-                            <ion-icon name="bag-outline"></ion-icon>
-                              <p className="text-sm font-jakartaSans">Products</p> 
-                          </li>
-                        </ul>
-                      </NavLink>
-                      <NavLink to={'/add-products'}>
-                        <ul className="">
-                          <li className="flex items-center gap-3 px-11 py-3 rounded-[15px] active:bg-iconBg-active mr-3">
-                            <ion-icon name="bag-outline"></ion-icon>
-                              <p className="text-sm font-jakartaSans">Add Product</p> 
-                          </li>
-                        </ul>
-                      </NavLink>
-                    </div>
-                    )}
-
-                </li>
-
-                <li className="flex items-center px-4 py-3 rounded-[15px]">
-                  <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
-                    <img
-                      src={creditcard}
-                      alt="icon"
-                      className="w-[15px] h-[15px]"
-                    />
-                  </div>
-                  <p className="text-sm font-jakartaSans">Billing</p>
-                </li>
-                <li className="flex items-center px-4 py-3 rounded-[15px]">
-                  <div className="p-2 rounded-xl bg-iconBg active:bg-iconBg-active mr-3">
-                    <img
-                      src={config}
-                      alt="icon"
-                      className="w-[15px] h-[15px]"
-
                 {links.map((link) => {
                   return (
                     <Button
@@ -137,7 +54,6 @@ const Sidebar = () => {
                       icon={link.icon}
                       dropdown={link.dropdown}
                       key={link.title}
-
                     />
                   );
                 })}

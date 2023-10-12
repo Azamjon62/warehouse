@@ -5,13 +5,6 @@ const Login = () => {
   const submitHandler = () => {};
   return (
     <>
-      {/* <div>
-        <div className="grid grid-rows-3 grid-flow-col gap-4">
-          <div className="row-span-3 w-[200px] h-5 bg-green-300">01</div>
-          <div className="col-span-2 ...">02</div>
-          <div className="row-span-2 col-span-2 ...">03</div>
-        </div>
-      </div> */}
       <div className="text">
         <div className="flex w-screen h-screen">
           <div className="relative flex-1 w-1/2 h-full bg-loginBg bg-no-repeat bg-center">

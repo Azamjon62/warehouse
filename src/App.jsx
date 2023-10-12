@@ -1,13 +1,5 @@
-import Sidebar from "./components/sidebar/Sidebar";
 import { Route, Routes } from "react-router-dom";
-import Product from "./pages/product/Product";
-import Dashboard from "./components/Dashboard";
-import Billing from "./components/Billing";
-import RTL from "./components/RTL";
-import Login from "./components/Login";
-import Layout from "./components/layout/Layout";
-import AddProducts from "./components/AddProducts";
-
+import { Billing, Dashboard, Login, Products, AddProducts, RTL } from "./pages";
 
 function App() {
   return (
@@ -19,9 +11,10 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/billing" element={<Billing />} />
             <Route path="/rtl" element={<RTL />} />
-            <Route path="/products" element={<Product />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/addproducts" element={<AddProducts />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/add-products" element={<AddProduct />} />
+            <Route path="*" element={<h1>Error 404 not found</h1>} />
           </Routes>
         </main>
       </div>
