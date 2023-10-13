@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Singup from "./Singup";
 
 const Login = () => {
   const submitHandler = () => {};
@@ -18,6 +19,7 @@ const Login = () => {
             </div>
           </div>
           <div className="relative flex-1 w-1/2 h-full bg-loginGradient">
+            {/* <Singup /> */}
             <div className="absolute top-1/4 ml-[61px] text-white">
               <div className="ml-10 mb-[140px]">
                 <div className="">
@@ -70,17 +72,28 @@ const Login = () => {
                   <Link className="font-bold text-white">Sign up</Link>
                 </p>
               </div>
-              <div className="text-sm leading-5 text-grayish">
-                <p>
-                  @ 2021, Made with ❤️ by Simmmple & Creative Tim for a better
-                  web
-                </p>
-                <div className="w-[251px] flex justify-between items-center">
-                  <Link>Marketplace</Link>
-                  <Link>Blog</Link>
-                  <Link>License</Link>
-                </div>
-              </div>
+            </div>
+            <div className="absolute flex flex-col items-center bottom-5 ml-5 text-sm leading-5 text-grayish">
+              <p>
+                @ 2021, Made with ❤️ by Simple & Creative Tim for a better web
+              </p>
+              <ul className="w-[251px] flex justify-between items-center">
+                <li className="relative">
+                  <Link className="after:inline-block after:w-0 after:h-[1.5px] after:bg-white after:absolute after:top-5 after:left-0 hover:after:w-full after:ease-in-out after:duration-300 hover:text-white ease-in-out duration-300">
+                    Marketplace
+                  </Link>
+                </li>
+                <li className="relative">
+                  <Link className="after:inline-block after:w-0 after:h-[1.5px] after:bg-white after:absolute after:top-5 after:left-0 hover:after:w-full after:ease-in-out after:duration-300 hover:text-white ease-in-out duration-300">
+                    Blog
+                  </Link>
+                </li>
+                <li className="relative">
+                  <Link className="after:inline-block after:w-0 after:h-[1.5px] after:bg-white after:absolute after:top-5 after:left-0 hover:after:w-full after:ease-in-out after:duration-300 hover:text-white ease-in-out duration-300">
+                    License
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
