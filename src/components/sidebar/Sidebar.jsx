@@ -5,23 +5,6 @@ import { links } from "../../utils/dummy";
 import Button from "./Button";
 
 const Sidebar = () => {
-  const btnRef = useRef(null);
-  useEffect(() => {
-    const isActive = () => {
-      if (btnRef.current == document.activeElement) {
-        console.log("it is");
-      } else {
-        console.log("it is not");
-      }
-      document.addEventListener("focus", isActive);
-      return () => {
-        document.removeEventListener("focus", isActive);
-      };
-    };
-  });
-
-  const [isOpen, setIsOpen] = useState(false);
-
   const activeLink =
     "flex items-center px-4 py-3 bg-sidebarActive rounded-[15px] cursor-pointer";
   const normalLink =

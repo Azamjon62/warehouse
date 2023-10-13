@@ -1,10 +1,12 @@
 import React from "react";
-import { facebook, apple, google } from "./../../assets/images";
-import { Link } from "react-router-dom";
+import { facebook, apple, google } from "../../assets/images";
+import { useStateContext } from "../../contexts/ContextProvider";
 
-const Singup = () => {
+const Signup = () => {
+  const { isSignUp, setIsSignUp } = useStateContext();
+
   return (
-    <div className="flex flex-col items-center text-white">
+    <div className=" ml-[61px] text-white">
       <div className="w-[425px]">
         <div className="text-center mt-3 mb-4">
           <h3 className="text-[30px] leading-[39px] font-bold">Welcome</h3>
@@ -14,7 +16,7 @@ const Singup = () => {
           </p>
         </div>
         <form className="w-full border rounded-[20px]">
-          <div className="py-10 pl-12 pr-14 flex flex-col items-center">
+          <div className="py-10 pl-14 pr-14 flex flex-col items-center">
             <div className="text-center">
               <h4 className="font-bold text-lg leading-6 mb-6">
                 Register with
@@ -81,7 +83,14 @@ const Singup = () => {
             </button>
             <p className="text-sm leading-3 text-center mt-5 mr-10 text-grayish">
               Already have an account?{" "}
-              <Link className="font-bold text-white">Sign in</Link>
+              <button
+                onClick={() => {
+                  setIsSignUp(!isSignUp);
+                }}
+                className="font-bold text-white"
+              >
+                Sign up
+              </button>
             </p>
           </div>
         </form>
@@ -90,4 +99,4 @@ const Singup = () => {
   );
 };
 
-export default Singup;
+export default Signup;
