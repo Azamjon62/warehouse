@@ -16,7 +16,6 @@ const Button = ({ title, icon, dropdown }) => {
   };
   const dropDownHandler = () => {
     setIsClicked(!isClicked);
-    console.log(isClicked);
   };
   return dropdown ? (
     <>
