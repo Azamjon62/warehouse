@@ -5,5 +5,15 @@ import Product from "./products/Product";
 import AddProduct from "./products/AddProduct";
 import RTL from "./rtl/RTL";
 import Layout from "./layout/Layout";
+import ProtectedRoutes from "./routesprotected/ProtectedRoutes";
 
-export { Dashboard, Billing, Login, Product, AddProduct, RTL, Layout };
+export {
+  Dashboard,
+  Billing,
+  Login,
+  Product,
+  AddProduct,
+  RTL,
+  Layout,
+  ProtectedRoutes,
+};

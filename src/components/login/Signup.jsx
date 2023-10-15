@@ -1,6 +1,6 @@
 import React from "react";
 import { facebook, apple, google } from "../../assets/images";
-import { useStateContext } from "../../contexts/ContextProvider";
+import { useStateContext } from "../../contexts/StateContextProvider";
 
 const Signup = () => {
   const { isSignUp, setIsSignUp } = useStateContext();

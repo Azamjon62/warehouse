@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { useStateContext } from "../../contexts/ContextProvider";
-import { useAuthContext } from "../../contexts/AuthContext";
+import React, { useState, useContext } from "react";
+import { useStateContext } from "../../contexts/StateContextProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const { isSignUp, setIsSignUp } = useStateContext();
+  const { user, setUser } = useStateContext();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [form, setForm] = useState({
     email: "eve.holt@reqres.in",
     password: "password",
@@ -12,7 +15,6 @@ const Signin = () => {
     type: "",
     message: "",
   });
-  const { isLogin, setIsLogin } = useAuthContext();
   const submitHandler = (evt) => {
     evt.preventDefault();
     setIsLogin(false);
@@ -20,7 +22,32 @@ const Signin = () => {
 
   return (
     <>
-      <div className="absolute top-1/4 ml-[61px] text-white">
+      <div className="flex flex-col items-center justify-center">
+        <button
+          onClick={() => {
+            localStorage.setItem("token", "asdkjfalkjsdf;jl;ksajdf");
+            if (user.loggedIn) return;
+            setUser({ loggedIn: localStorage.getItem("token") ? true : false });
+            if (location.state?.from) {
+              navigate(location.state.from);
+            }
+          }}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Log in
+        </button>
+        <button
+          onClick={() => {
+            if (!user.loggedIn) return;
+            localStorage.removeItem("token");
+            setUser({ loggedIn: localStorage.getItem("token") ? true : false });
+          }}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Log out
+        </button>
+      </div>
+      {/* <div className="absolute top-1/4 ml-[61px] text-white">
         <div className="ml-10 mb-[140px]">
           <div className="">
             <h3 className="text-[30px] leading-[39px] font-bold">
@@ -76,7 +103,7 @@ const Signin = () => {
             </button>
           </p>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
