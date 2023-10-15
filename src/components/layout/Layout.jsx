@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import Sidebar from "../sidebar/Sidebar";
 
-const Layout = ({ children }) => {
-  const isSideBarActive = true;
-  console.log(children);
+const Layout = ({ children, isSideBarActive = true }) => {
   return isSideBarActive ? (
     <>
-      <Sidebar />
-      {children}
+      <main className="w-full flex">
+        <Sidebar />
+        <section className="w-full h-screen p-5">{children}</section>
+      </main>
     </>
   ) : (
-    { children }
+    <main className="w-full">
+      <section>{children}</section>
+    </main>
   );
 };
 

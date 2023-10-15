@@ -8,6 +8,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { PencilIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const TABLE_HEAD = [
@@ -70,47 +71,39 @@ const Product = () => {
   ];
 
   return (
-    <div className="py-5 pr-5">
+    <div className="flex flex-col h-full">
       <div className="w-[100%] rounded-[8px] text-white bg-[#060b268f]">
-        <nav aria-label="breadcrumb" class="w-max">
-          <ol class="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
-            <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
-              <a class="opacity-60" href="#">
+        <nav aria-label="breadcrumb" className="w-max">
+          <ol className="flex w-full flex-wrap items-center rounded-md bg-blue-gray-50 bg-opacity-60 py-2 px-4">
+            <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+              <Link to={"/"} className="opacity-60">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
+                  className="h-4 w-4"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
                   <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
                 </svg>
-              </a>
-              <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+              </Link>
+              <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
                 /
               </span>
             </li>
-            <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
-              <a class="opacity-60" href="#">
-                <span>Product</span>
-              </a>
-              <span class="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
+            <li className="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
+              <Link to={"/products"} className="opacity-60">
+                <span>Products</span>
+              </Link>
+              <span className="pointer-events-none mx-2 select-none font-sans text-sm font-normal leading-normal text-blue-gray-500 antialiased">
                 /
               </span>
-            </li>
-            <li class="flex cursor-pointer items-center font-sans text-sm font-normal leading-normal text-blue-gray-900 antialiased transition-colors duration-300 hover:text-pink-500">
-              <a
-                class="font-medium text-blue-gray-900 transition-colors hover:text-pink-500"
-                href="#"
-              >
-                Products
-              </a>
             </li>
           </ol>
         </nav>
       </div>
 
-      <Card className="h-full w-full py-5 mt-5 bg-[#060b268f] rounded-[20px] text-white">
-        <CardBody className="overflow-scroll py-0">
+      <Card className="flex-1 h-full w-full py-5 mt-5 bg-[#060b268f] rounded-[20px] text-white">
+        <CardBody className="overflow-auto py-0">
           <table className="w-full min-w-max table-auto text-left ">
             <thead>
               <tr>
@@ -267,10 +260,10 @@ const Product = () => {
         </CardFooter> */}
       </Card>
 
-      <div className="py-5 pr-5">
-        {/* <table className="table-auto text-white bg-[#060b268f] rounded-[20px] w-[100%]">
-          <thead className="" >
-            <tr className="" >
+      {/* <div className="py-5 pr-5"> */}
+      {/* <table className="table-auto text-white bg-[#060b268f] rounded-[20px] w-[100%]">
+          <thead className="">
+            <tr className="">
               <th>Song</th>
               <th>Artist</th>
               <th>Year</th>
@@ -294,7 +287,7 @@ const Product = () => {
             </tr>
           </tbody>
         </table> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };

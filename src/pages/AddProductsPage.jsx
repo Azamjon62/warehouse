@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, AddProduct } from "../components";
 
-const AddProducts = () => {
+const AddProductsPage = () => {
   return (
     <Layout>
       <AddProduct />
@@ -9,4 +9,4 @@ const AddProducts = () => {
   );
 };
 
-export default AddProducts;
+export default AddProductsPage;

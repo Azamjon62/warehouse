@@ -5,23 +5,6 @@ import { links } from "../../utils/dummy";
 import Button from "./Button";
 
 const Sidebar = () => {
-  const btnRef = useRef(null);
-  useEffect(() => {
-    const isActive = () => {
-      if (btnRef.current == document.activeElement) {
-        console.log("it is");
-      } else {
-        console.log("it is not");
-      }
-      document.addEventListener("focus", isActive);
-      return () => {
-        document.removeEventListener("focus", isActive);
-      };
-    };
-  });
-
-  const [isOpen, setIsOpen] = useState(false);
-
   const activeLink =
     "flex items-center px-4 py-3 bg-sidebarActive rounded-[15px] cursor-pointer";
   const normalLink =
@@ -29,14 +12,11 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="px-5 h-full py-5">
+      <section className="px-5 h-full py-5">
         <div className="w-[264px] max-h-[890] h-full rounded-[20px] bg-[#001e53a4] ">
           <div className="wrapper">
             <div className="wrapper-top flex flex-col pt-7 mb-5">
-              <Link
-                to={"/dashboard"}
-                className="self-center w-[135px] h-[14px] mb-7"
-              >
+              <Link to={"/"} className="self-center w-[135px] h-[14px] mb-7">
                 <img
                   src={logo}
                   alt="logo of warehouse"
@@ -61,7 +41,7 @@ const Sidebar = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

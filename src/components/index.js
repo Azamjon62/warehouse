@@ -1,4 +1,4 @@
-import Dashboard from "./dashboard/Dashboard";
+import Dashboard from "./dashboard/Dashboardcom";
 import Billing from "./billing/Billing";
 import Login from "./login/Login";
 import Product from "./products/Product";
