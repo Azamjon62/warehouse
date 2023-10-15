@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Signup from "./Signup";
 import Tagline from "./Tagline";
 import Signin from "./Signin";
-import { useStateContext } from "../../contexts/ContextProvider";
+import { useStateContext } from "../../contexts/StateContextProvider";
 
 const Login = () => {
   const { isSignUp, setIsSignUp } = useStateContext();
