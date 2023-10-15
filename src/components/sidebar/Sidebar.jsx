@@ -16,10 +16,7 @@ const Sidebar = () => {
         <div className="w-[264px] max-h-[890] h-full rounded-[20px] bg-[#001e53a4] ">
           <div className="wrapper">
             <div className="wrapper-top flex flex-col pt-7 mb-5">
-              <Link
-                to={"/dashboard"}
-                className="self-center w-[135px] h-[14px] mb-7"
-              >
+              <Link to={"/"} className="self-center w-[135px] h-[14px] mb-7">
                 <img
                   src={logo}
                   alt="logo of warehouse"
